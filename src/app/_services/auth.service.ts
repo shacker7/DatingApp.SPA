@@ -17,10 +17,10 @@ export class AuthService {
                 localStorage.setItem('token', user.tokenString);
             }
         });
-        }
+    }
 
     register(model: any) {
-        return this.http.post(this.baseUrl.toString() + 'register', model, this.requestOptions());
+        return this.http.post(this.baseUrl + 'register', model, this.requestOptions());
     }
 
     private requestOptions() {
