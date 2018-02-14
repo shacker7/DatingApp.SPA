@@ -27,6 +27,7 @@
         </form>
 
         <ul *ngIf="loggedIn()" class="nav navbar-nav navbar-right">
+          <img src="{{photoUrl}}" alt="">
           <li class="dropdown" dropdown>
             <a (click)="false" class="dropdown-toggle" dropdownToggle>Welcom {{authService.decodedToken?.unique_name | titlecase}}<span class="caret"></span></a>
             <ul class="dropdown-menu" *dropdownMenu>
