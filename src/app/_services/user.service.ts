@@ -107,6 +107,18 @@ export class UserService {
             }).catch(this.handleError);
     }
 
+    sendMessage(id: number, message: Message) {
+        return this.authHttp.post(this.baseUrl + '/users/' + id + '/messages', message)
+            .map((response: Response) => {
+                return response.json();
+            }).catch(this.handleError);
+    }
+
+    deleteMessage(id: number, userId: number) {
+        return this.authHttp.post(this.baseUrl + '/users/' + userId + '/messages/' + id, {})
+            .map(response => {}).catch(this.handleError);
+    }
+
     private handleError(error: any) {
         if (error.status === 400) {
             return Observable.throw(error._body);
